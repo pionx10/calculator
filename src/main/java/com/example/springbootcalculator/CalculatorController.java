@@ -13,23 +13,23 @@ public class CalculatorController{
     @Autowired
     private CalculatorService calculatorService;
 
-    @PostMapping
+    @PostMapping("add")
     public double add(int a, int b) {
-        return 0;
+        return this.calculatorService.add(a, b);
     }
 
-    @PostMapping
+    @PostMapping("subtract")
     public double subtract(int a, int b) {
-        return 0;
+        return this.calculatorService.subtract(a, b);
     }
 
-    @PostMapping
+    @PostMapping("multiply")
     public double multiply(int a, int b) {
-        return 0;
+        return this.calculatorService.multiply(a, b);
     }
 
-    @PostMapping
+    @PostMapping("divide")
     public double divide(int a, int b) {
-        return 0;
+        return this.calculatorService.divide(a, b);
     }
 }

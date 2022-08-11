@@ -1,11 +1,16 @@
 package com.example.springbootcalculator;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorServiceTest {
     CalculatorService calculatorService;
+    @BeforeEach
+    void setUp() {
+        calculatorService = new CalculatorService();
+    }
 
     @Test
     void add() {
