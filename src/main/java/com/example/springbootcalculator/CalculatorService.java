@@ -2,10 +2,12 @@ package com.example.springbootcalculator;
 
 import com.example.springbootcalculator.entity.Args;
 import com.example.springbootcalculator.entity.Calculation;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@AllArgsConstructor
 public class CalculatorService {
     @Autowired
     private CalculatorRepository calculatorRepository;
