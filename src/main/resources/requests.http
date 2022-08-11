@@ -1,0 +1,36 @@
+### add numbers
+POST http://localhost:8080/api/add
+Content-Type: application/json
+
+{
+  "a": 1,
+  "b": 7
+}
+
+### subtract numbers
+POST http://localhost:8080/api/subtract
+Content-Type: application/json
+
+{
+  "a": 2,
+  "b": 7
+}
+
+### multiply numbers
+POST http://localhost:8080/api/multiply
+Content-Type: application/json
+
+{
+  "a": 11,
+  "b": 99
+}
+
+### divide numbers
+POST http://localhost:8080/api/divide
+Content-Type: application/json
+
+{
+  "a": 100,
+  "b": 11
+}
+

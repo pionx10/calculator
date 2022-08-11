@@ -1,10 +1,7 @@
 package com.example.springbootcalculator;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
 @RestController
@@ -13,23 +10,23 @@ public class CalculatorController{
     @Autowired
     private CalculatorService calculatorService;
 
-    @PostMapping
-    public double add(int a, int b) {
-        return 0;
+    @PostMapping("add")
+    public double add(@RequestBody Args args) {
+        return this.calculatorService.add(args);
     }
 
-    @PostMapping
-    public double subtract(int a, int b) {
-        return 0;
+    @PostMapping("subtract")
+    public double subtract(@RequestBody Args args) {
+        return this.calculatorService.subtract(args);
     }
 
-    @PostMapping
-    public double multiply(int a, int b) {
-        return 0;
+    @PostMapping("multiply")
+    public double multiply(@RequestBody Args args) {
+        return this.calculatorService.multiply(args);
     }
 
-    @PostMapping
-    public double divide(int a, int b) {
-        return 0;
+    @PostMapping("divide")
+    public double divide(@RequestBody Args args) {
+        return this.calculatorService.divide(args);
     }
 }
