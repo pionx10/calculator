@@ -1,3 +1,7 @@
+### Get all calculations
+GET http://localhost:8080/api
+Accept: application/json
+
 ### add numbers
 POST http://localhost:8080/api/add
 Content-Type: application/json
