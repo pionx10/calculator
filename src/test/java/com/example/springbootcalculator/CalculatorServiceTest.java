@@ -14,21 +14,33 @@ class CalculatorServiceTest {
 
     @Test
     void add() {
-        assertEquals(3, calculatorService.add(1, 2));
+        Args args = new Args();
+        args.setA(1);
+        args.setB(2);
+        assertEquals(3, calculatorService.add(args));
     }
 
     @Test
     void subtract() {
-        assertEquals(1, calculatorService.subtract(2, 1));
+        Args args = new Args();
+        args.setA(2);
+        args.setB(1);
+        assertEquals(1, calculatorService.subtract(args));
     }
 
     @Test
     void multiply() {
-        assertEquals(8, calculatorService.multiply(4, 2));
+        Args args = new Args();
+        args.setA(4);
+        args.setB(2);
+        assertEquals(8, calculatorService.multiply(args));
     }
 
     @Test
     void divide() {
-        assertEquals(4, calculatorService.divide(8, 2));
+        Args args = new Args();
+        args.setA(8);
+        args.setB(2);
+        assertEquals(4, calculatorService.divide(args));
     }
 }
