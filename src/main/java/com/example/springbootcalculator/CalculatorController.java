@@ -1,5 +1,7 @@
 package com.example.springbootcalculator;
 
+import com.example.springbootcalculator.entity.Args;
+import com.example.springbootcalculator.entity.Calculation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,6 +11,11 @@ import org.springframework.web.bind.annotation.*;
 public class CalculatorController{
     @Autowired
     private CalculatorService calculatorService;
+
+    @GetMapping
+    public Iterable<Calculation> list() {
+        return this.calculatorService.findAll();
+    }
 
     @PostMapping("add")
     public double add(@RequestBody Args args) {

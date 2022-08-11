@@ -1,4 +1,4 @@
-package com.example.springbootcalculator;
+package com.example.springbootcalculator.entity;
 
 import lombok.Data;
 
