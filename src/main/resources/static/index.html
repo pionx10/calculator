@@ -6,21 +6,26 @@
     <script src="index.js" ></script>
 </head>
 <body>
-<form>
-    <p>Choose 2 numbers and operation</p>
+<p>Choose 2 numbers and operation</p>
 
-    <div>
-        <label for="a"></label>
-        <input name="a" id="a" value="0">
-    </div>
-    <div>
-        <label for="b"></label>
-        <input name="b" id="b" value="0">
-    </div>
-    <div>
-        <button onclick="calculate();">Calculate</button>
-    </div>
-</form>
+<div>
+    <label for="a"></label>
+    <input name="a" id="a" value="0">
+    <label for="b"></label>
+    <input name="b" id="b" value="0">
+</div>
+<div>
+    <select id="action">
+        <option value="add">add</option>
+        <option value="subtract">subtract</option>
+        <option value="multiply">multiply</option>
+        <option value="divide">divide</option>
+    </select>
+</div>
+<div>
+    <button onclick="calculate();">Calculate</button>
+</div>
+<div id="answer"></div>
 
 <button onclick="showHistory();">Calculator history</button>
 <div id="historyTable"></div>
