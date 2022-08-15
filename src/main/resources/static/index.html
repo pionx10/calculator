@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Calculator app</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="index.js" ></script>
+</head>
+<body>
+<form>
+    <p>Choose 2 numbers and operation</p>
+
+    <div>
+        <label for="a"></label>
+        <input name="a" id="a" value="0">
+    </div>
+    <div>
+        <label for="b"></label>
+        <input name="b" id="b" value="0">
+    </div>
+    <div>
+        <button onclick="calculate();">Calculate</button>
+    </div>
+</form>
+
+<button onclick="showHistory();">Calculator history</button>
+<div id="historyTable"></div>
+
+</body>
+</html>

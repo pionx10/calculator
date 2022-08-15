@@ -12,7 +12,7 @@ public class CalculatorController{
     @Autowired
     private CalculatorService calculatorService;
 
-    @GetMapping
+    @GetMapping("history")
     public Iterable<Calculation> list() {
         return this.calculatorService.findAll();
     }
