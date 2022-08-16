@@ -27,54 +27,73 @@ class CalculatorServiceTest {
     }
 
     @Test
-    void add() {
+    void addPositive() {
         Args args = new Args();
         args.setA(1);
         args.setB(2);
-        Args args2 = new Args();
-        args2.setA(-1);
-        args2.setB(-1);
         when(calculatorRepository.save(any(Calculation.class))).then(returnsFirstArg());
         assertEquals(3, calculatorService.add(args));
-        assertEquals(-2, calculatorService.add(args2));
     }
 
     @Test
-    void subtract() {
+    void addNegative() {
+        Args args = new Args();
+        args.setA(-1);
+        args.setB(-1);
+        when(calculatorRepository.save(any(Calculation.class))).then(returnsFirstArg());
+        assertEquals(-2, calculatorService.add(args));
+    }
+
+    @Test
+    void subtractPositive() {
         Args args = new Args();
         args.setA(2);
         args.setB(1);
-        Args args2 = new Args();
-        args2.setA(-1);
-        args2.setB(-1);
         when(calculatorRepository.save(any(Calculation.class))).then(returnsFirstArg());
         assertEquals(1, calculatorService.subtract(args));
-        assertEquals(0, calculatorService.subtract(args2));
     }
 
     @Test
-    void multiply() {
+    void subtractNegative() {
+        Args args = new Args();
+        args.setA(-1);
+        args.setB(-1);
+        when(calculatorRepository.save(any(Calculation.class))).then(returnsFirstArg());
+        assertEquals(0, calculatorService.subtract(args));
+    }
+
+    @Test
+    void multiplyPositive() {
         Args args = new Args();
         args.setA(4);
         args.setB(2);
-        Args args2 = new Args();
-        args2.setA(-1);
-        args2.setB(-1);
         when(calculatorRepository.save(any(Calculation.class))).then(returnsFirstArg());
         assertEquals(8, calculatorService.multiply(args));
-        assertEquals(1, calculatorService.multiply(args2));
     }
 
     @Test
-    void divide() {
+    void multiplyNegative() {
+        Args args = new Args();
+        args.setA(-1);
+        args.setB(-1);
+        when(calculatorRepository.save(any(Calculation.class))).then(returnsFirstArg());
+        assertEquals(1, calculatorService.multiply(args));
+    }
+
+    @Test
+    void dividePositive() {
         Args args = new Args();
         args.setA(8);
         args.setB(2);
-        Args args2 = new Args();
-        args2.setA(10);
-        args2.setB(0);
         when(calculatorRepository.save(any(Calculation.class))).then(returnsFirstArg());
         assertEquals(4, calculatorService.divide(args));
-        assertEquals(Double.POSITIVE_INFINITY, calculatorService.divide(args2));
+    }
+    @Test
+    void divideByZero() {
+        Args args = new Args();
+        args.setA(10);
+        args.setB(0);
+        when(calculatorRepository.save(any(Calculation.class))).then(returnsFirstArg());
+        assertEquals(Double.POSITIVE_INFINITY, calculatorService.divide(args));
     }
 }
